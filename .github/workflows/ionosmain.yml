@@ -1,0 +1,28 @@
+version: "1.0"
+
+# Project settings
+project:
+  name: "nekton-advising"
+  type: "static"  # Change to "nodejs" if using a backend
+
+# Deployment settings
+deploy:
+  install: # Skip install since this is a static site
+  build: # No build step needed for pure HTML/CSS
+  publish: "./"  # The root directory
+
+# Environment Variables (Optional)
+env:
+  - key: "BASE_URL"
+    value: "https://nektonadvising.com"
+
+# Custom Domain Setup
+domains:
+  - "nektonadvising.com"
+  - "www.nektonadvising.com"
+
+# Optional - Redirects
+redirects:
+  - from: "/*"
+    to: "/index.html"
+    status: 200
